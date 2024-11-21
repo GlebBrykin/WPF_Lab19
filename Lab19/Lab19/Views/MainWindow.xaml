@@ -1,1 +1,18 @@
-
+﻿<Window x:Class="Lab19.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab19"
+        xmlns:vm="clr-namespace:Lab19.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="80" Width="600">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <UniformGrid Rows="1" Columns="3">
+        <TextBox Text="{Binding Path=Radius}" Height="30" Margin="5" Padding="5"/>
+        <Button Content="Вычислить длину окружности" Margin="5" Padding="5" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding Path=CalcLengthCommand}"/>
+        <TextBox Text="{Binding Path=Length}" Height="30" Margin="5" Padding="5" IsReadOnly="True"/>
+    </UniformGrid>
+</Window>
